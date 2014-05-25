@@ -6,8 +6,6 @@ feature 'user signs in', %Q{
   So that I can enter my system
 } do
 
-  # let(:user) { FactoryGirl.create(:user) }
-
   scenario 'signing in' do
     user = FactoryGirl.create(:user)
     sign_in_as(user)
