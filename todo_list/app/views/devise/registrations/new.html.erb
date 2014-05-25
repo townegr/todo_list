@@ -1,0 +1,20 @@
+<h2>Sign up</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.email_field :email, placeholder: 'Email Address', required: true, autofocus: true %>
+    <%= f.text_field :first_name, placeholder: 'First Name', required: true %>
+    <%= f.text_field :last_name, placeholder: 'Last Name', required: true %>
+    <%= f.text_field :username, placeholder: 'Username', required: true %>
+    <%= f.input :password, placeholder: 'Password', required: true, label: false %>
+    <%= f.input :password_confirmation, placeholder: 'Password confirmation', required: true, label: false %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Sign Up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
