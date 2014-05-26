@@ -1,0 +1,6 @@
+<%= simple_form_for @task do |f| %>
+  <%= f.text_field :title, placeholder: 'Task' %>
+  <%= f.text_field :description, placeholder: 'More Details' %>
+  <%= f.button :submit, 'Add Task' %>
+<% end %>
+

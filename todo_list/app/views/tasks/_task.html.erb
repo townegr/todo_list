@@ -1,0 +1,18 @@
+<div id='tasks'>
+  <table>
+    <thead>
+      <tr>
+        <th>Task</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%# @tasks.each do |task| %>
+      <tr>
+        <td><%= task.title %></td>
+        <td><%= link_to 'Edit', edit_task_path(task) %></td>
+        <td><%= button_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></td>
+      </tr>
+      <%# end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,17 @@
+
+
+<%#= button_to 'Create New', new_task_path, method: :get %>
+<h1>New Task</h1>
+
+<%= render 'form' %>
+<%= render @tasks %>
+
+<% content_for :extra_footer do %>
+  <script>
+  $(function(){
+    $('.tasks').on('ajax:complete', function(event, response){
+      $(event.target).parent();
+    });
+  });
+  </script>
+<% end %>
