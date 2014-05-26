@@ -42,6 +42,15 @@ class TasksController < ApplicationController
     end
   end
 
+  def complete
+    params[:tasks_checkbox].each do |check|
+      task_id = check
+        t = Task.find_by_id(task_id)
+      t.update_attribute(:completed, true)
+      redirect_to tasks_path
+    end
+  end
+
   private
 
   def find_task
@@ -49,6 +58,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:title, :description).merge(user: current_user)
+    params.require(:task).permit(:title, :description, :completed).merge(user: current_user)
   end
 end
