@@ -1,9 +1,15 @@
 <div class="row">
-  <div class="small-6 columns">
+  <div class="large-3 columns">
+    <br>
+  </div>
+  <div class="large-6 columns">
     <%= simple_form_for @task do |f| %>
       <%= f.text_field :title, placeholder: 'Task' %>
       <%= f.text_field :description, placeholder: 'Additional Details' %>
       <%= f.button :submit, 'Add Task' %>
     <% end %>
+  </div>
+  <div class="large-3 columns">
+    <br>
   </div>
 </div>
