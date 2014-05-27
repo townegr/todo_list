@@ -46,9 +46,9 @@ class TasksController < ApplicationController
     params[:tasks_checkbox].each do |check|
       task_id = check
         t = Task.find_by_id(task_id)
-      t.update_attribute(:completed, true)
-      redirect_to tasks_path
+      t.update_attribute(:completed, !t.completed)
     end
+    redirect_to tasks_path
   end
 
   private

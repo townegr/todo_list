@@ -3,6 +3,14 @@ TodoList::Application.routes.draw do
   devise_for :users
   resources :tasks
   match 'tasks/complete', to: 'tasks#complete', via: :post
+  match 'tasks/delete', to: 'tasks#delete', via: :delete
+  resources :tasks do
+    collection do
+      post 'complete'
+      get 'edit'
+      delete 'destroy'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
