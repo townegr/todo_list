@@ -11,7 +11,6 @@ feature 'user signs out', %Q{
     sign_in_as(user)
     click_on 'Log Out'
 
-    expect(page).to have_content('Signed out successfully.')
     expect(current_url).to eq(root_url)
   end
 end

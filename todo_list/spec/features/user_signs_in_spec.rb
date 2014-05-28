@@ -10,7 +10,6 @@ feature 'user signs in', %Q{
     user = FactoryGirl.create(:user)
     sign_in_as(user)
 
-    expect(page).to have_content("Signed in successfully.")
-    expect(current_url).to eq(root_url)
+    expect(current_path).to eq(tasks_path)
   end
 end

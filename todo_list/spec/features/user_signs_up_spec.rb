@@ -24,6 +24,6 @@ feature 'user registration', %Q{
     end
 
     expect(page).to have_content('Welcome! You have signed up successfully.')
-    expect(current_path).to eq(root_path)
+    expect(current_path).to eq(tasks_path)
   end
 end

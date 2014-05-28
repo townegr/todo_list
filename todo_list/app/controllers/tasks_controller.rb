@@ -2,13 +2,8 @@ class TasksController < ApplicationController
   before_action :authenticate_user!
   before_action :find_task, only: [:show, :edit, :update, :destroy]
 
-  # def index
-  #   @tasks = Task.all
-  # end
-
   def index
     @task = Task.new
-    # @tasks = Task.all
     @tasks = current_user.tasks.includes(:user)
   end
 
@@ -27,8 +22,8 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task.delete
-    redirect_to tasks_path, notice: 'Successfully deleted.'
+    @task.destroy
+      redirect_to tasks_path, notice: 'Successfully deleted.'
   end
 
   def edit
