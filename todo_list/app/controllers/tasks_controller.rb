@@ -9,7 +9,7 @@ class TasksController < ApplicationController
   def index
     @task = Task.new
     # @tasks = Task.all
-    @tasks = current_user.tasks
+    @tasks = current_user.tasks.includes(:user)
   end
 
   def create

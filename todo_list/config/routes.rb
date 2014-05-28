@@ -1,7 +1,9 @@
 TodoList::Application.routes.draw do
-  root 'tasks#index'
+  root 'welcome#home'
+
   devise_for :users
   resources :tasks
+
   match 'tasks/complete', to: 'tasks#complete', via: :post
   match 'tasks/delete', to: 'tasks#delete', via: :delete
   resources :tasks do
